@@ -7,3 +7,17 @@
 // SIDE TASKS:
 // Figure out how to make a how-to modal that pops up as the page loads. You then click the play button to make the modal disappear.
 // Figure out how to play an audio file on loop.
+
+const mainGrid = document.getElementById('grid')
+
+for (let i = 1; i <= 16; i++) {
+    const gridItem = document.createElement('div')
+    gridItem.id = 'grid-' + i
+    gridItem.classList.add('grid-item')
+    mainGrid.appendChild(gridItem)
+}
+
+const button1 = document.getElementById('grid-1')
+button1.addEventListener('click', () => {
+    alert('you clicked me!')
+})

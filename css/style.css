@@ -1,21 +1,44 @@
 body {
-    background-color: silver;
+    background-color: #332D2B;
 }
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    margin: 0 auto;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 60px auto;
     border: 1px solid black;
     padding: 20px;
     width: 75%;
     height: 75vh;
+    background-image: url('https://cdn.pixabay.com/photo/2022/05/24/11/43/home-office-7218315_1280.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .grid-item {
-    background-color: red;
+    /* background-color: red; */
     padding: 20px;
     text-align: center;
+    border: 1px solid black;
     cursor: pointer;
+}
+
+.code {
+    grid-row: 5;
+    grid-column: 6;
+    text-align: left;
+}
+
+.textbox {
+    width: 70px;
+    padding: 2px;
+    text-align: center;
+}
+
+.submit-button {
+    margin: 3px 0 0 11px;
+}
+
+::placeholder {
+    text-align: center;
 }

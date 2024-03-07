@@ -4,12 +4,14 @@ body {
 
 #grid {
     display: grid;
+    /* This is how we take the 64 created divs and make them an 8x8 grid */
     grid-template-columns: repeat(8, 1fr);
     margin: 60px auto;
     border: 1px solid black;
     padding: 20px;
     width: 75%;
     height: 75vh;
+    /* this will ensure the image is always lined up beneath the grid */
     background-image: url('https://cdn.pixabay.com/photo/2022/05/24/11/43/home-office-7218315_1280.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;

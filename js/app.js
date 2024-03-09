@@ -13,7 +13,9 @@ const mainGrid = document.getElementById('grid')
 
 for (let i = 1; i <= 63; i++) {
     const gridItem = document.createElement('div')
+    // each grid element is given a specific ID
     gridItem.id = 'grid-' + i
+    // and class (for styling)
     gridItem.classList.add('grid-item')
     mainGrid.appendChild(gridItem)
 }
@@ -56,10 +58,12 @@ const startGame = () => {
 const foundClue1 = () => {
     // using alerts as placeholder. Will use dialog later.
     // alert('You found a clue! \n\nI speak without a mouth, heard but never seen. Outside I am hard to find, yet in a room I am serene.')
+    // first, we show the modal
     document.getElementById("clue1").showModal()
     // OK BUTTON //
     const okButton = document.getElementById('ok-button1')
     okButton.addEventListener('click', () => {
+        // then we tell the dialog to close when the OK button is clicked.
         dlg = document.getElementById('clue1')
         dlg.close('')
     })
@@ -125,6 +129,7 @@ const foundPoison = () => {
     // OK BUTTON //
     const okButton = document.getElementById('ok-button5')
     okButton.addEventListener('click', () => {
+        // this will refresh the page completely.
         history.go()
     })
 }
@@ -132,6 +137,7 @@ const foundPoison = () => {
 const foundScare = () => {
     document.getElementById("scare").showModal()
     jumpScare.play()
+    // Jumpscare will pop up for a couple seconds and then disappear without needing additional user input.
     setTimeout(() => {
         dlg = document.getElementById('scare')
         dlg.close('')
@@ -144,6 +150,7 @@ const youWin = () => {
     if (userInput.toLowerCase() === 'silence') {
         // console.log('you win')
         document.getElementById("you-win").showModal()
+        // pausing main music so the victory music played unhindered.
         bgMusic.pause()
         victory.play()
         // OK BUTTON //

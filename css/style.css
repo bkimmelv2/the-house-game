@@ -1,12 +1,36 @@
 body {
     background-color: #332D2B;
+    text-align: center;
+    animation: fadeIn ease 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#title {
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: inline-block;
+    background-color: black;
+    color: #6F0B01;
+    border-radius: 30px;
+    padding: 15px;
 }
 
 #grid {
     display: grid;
     /* This is how we take the 64 created divs and make them an 8x8 grid */
     grid-template-columns: repeat(8, 1fr);
-    margin: 60px auto;
+    margin: 15px auto;
     border: 1px solid black;
     padding: 20px;
     width: 75%;
@@ -21,7 +45,7 @@ body {
     /* background-color: red; */
     padding: 20px;
     text-align: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     cursor: pointer;
 }
 
@@ -31,16 +55,20 @@ body {
     text-align: left;
 }
 
-.textbox {
+#textbox {
     width: 70px;
     padding: 2px;
     text-align: center;
 }
 
-.submit-button {
-    margin: 3px 0 0 11px;
+#submit-button {
+    margin: 3px 0 0 15px;
 }
 
 ::placeholder {
     text-align: center;
+}
+
+#scary-image {
+    width: 75%;
 }

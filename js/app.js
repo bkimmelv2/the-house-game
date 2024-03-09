@@ -19,6 +19,15 @@ for (let i = 1; i <= 63; i++) {
 }
 ///////////////////////
 
+// MUSIC SETTINGS //
+const bgMusic = document.getElementById('bg-music')
+bgMusic.volume = 0.15
+bgMusic.loop = true
+
+const jumpScare = document.getElementById('jumpscare')
+jumpScare.volume = 0.25
+jumpScare.loop = false
+
 // Random number generator if I need it later:
 // const randomNumber = Math.floor(Math.random() * 63) + 1
 // const randomNumber2 = Math.floor(Math.random() * 63) + 1
@@ -26,6 +35,16 @@ for (let i = 1; i <= 63; i++) {
 // Write a function for each different click event (i.e. clue, nonclue, scary picture/sound, etc.)
 
 // FUNCTIONS
+const startGame = () => {
+    document.getElementById("instructions").showModal()
+    // OK BUTTON //
+    const okButton = document.getElementById('ok-button')
+    okButton.addEventListener('click', () => {
+        dlg = document.getElementById('instructions')
+        dlg.close('')
+    })
+}
+
 const foundClue1 = () => {
     // using alerts as placeholder. Will use dialog later.
     // alert('You found a clue! \n\nI speak without a mouth, heard but never seen. Outside I am hard to find, yet in a room I am serene.')
@@ -60,17 +79,78 @@ const foundFalseClue1 = () => {
     })
 }
 
-// const foundFalseClue2 = () => {
-//     alert('')
-// }
+const foundFalseClue2 = () => {
+    document.getElementById("false-clue2").showModal()
+    // OK BUTTON //
+    const okButton = document.getElementById('ok-button4')
+    okButton.addEventListener('click', () => {
+        dlg = document.getElementById('false-clue2')
+        dlg.close('')
+    })
+}
 
-// const foundPoison = () => {
-//     alert('You start to feel dizzy as you realize you\'ve just touched poison! Ouch, poor thing. Try again next time!')
-// }
+const foundFunny1 = () => {
+    document.getElementById("funny1").showModal()
+    // OK BUTTON //
+    const okButton = document.getElementById('ok-button6')
+    okButton.addEventListener('click', () => {
+        dlg = document.getElementById('funny1')
+        dlg.close('')
+    })
+}
 
-// const foundScare = () => {
+const foundFunny2 = () => {
+    document.getElementById("funny2").showModal()
+    // OK BUTTON //
+    const okButton = document.getElementById('ok-button7')
+    okButton.addEventListener('click', () => {
+        dlg = document.getElementById('funny2')
+        dlg.close('')
+    })
+}
 
-// }
+const foundPoison = () => {
+    // alert('You start to feel dizzy as you realize you\'ve just touched poison! Ouch, poor thing. Try again next time!')
+    document.getElementById("poison").showModal()
+    // OK BUTTON //
+    const okButton = document.getElementById('ok-button5')
+    okButton.addEventListener('click', () => {
+        history.go()
+    })
+}
+
+const foundScare = () => {
+    document.getElementById("scare").showModal()
+    jumpScare.play()
+    setTimeout(() => {
+        dlg = document.getElementById('scare')
+        dlg.close('')
+    }, 2500)
+}
+
+const youWin = () => {
+    const userInput = document.getElementById('textbox').value
+    // console.log(userInput)
+    if (userInput.toLowerCase() === 'silence') {
+        // console.log('you win')
+        document.getElementById("you-win").showModal()
+        // OK BUTTON //
+        const okButton = document.getElementById('ok-button9')
+        okButton.addEventListener('click', () => {
+            history.go()
+        })
+    } else {
+        // console.log('try again')
+        document.getElementById("try-again").showModal()
+        document.getElementById('textbox').value = ""
+        // OK BUTTON //
+        const okButton = document.getElementById('ok-button8')
+        okButton.addEventListener('click', () => {
+            dlg = document.getElementById('try-again')
+            dlg.close('')
+        })
+    }
+}
 
 // We can then call the chosen function on whatever div space we pick.
 
@@ -80,7 +160,7 @@ const foundFalseClue1 = () => {
 //     foundClue1()
 // })
 
-// BUTTON EVENT LISTENERS
+// BUTTON (div) EVENT LISTENERS
 const clue1Button = document.getElementById('grid-34')
 clue1Button.addEventListener('click', () => {
     foundClue1()
@@ -95,3 +175,59 @@ const falseClue1Button = document.getElementById('grid-20')
 falseClue1Button.addEventListener('click', () => {
     foundFalseClue1()
 })
+
+const falseClue2Button = document.getElementById('grid-45')
+falseClue2Button.addEventListener('click', () => {
+    foundFalseClue2()
+})
+
+const funny1Button = document.getElementById('grid-17')
+funny1Button.addEventListener('click', () => {
+    foundFunny1()
+})
+
+const funny2Button = document.getElementById('grid-11')
+funny2Button.addEventListener('click', () => {
+    foundFunny2()
+})
+
+const poisonButton1 = document.getElementById('grid-35')
+poisonButton1.addEventListener('click', () => {
+    foundPoison()
+})
+
+const poisonButton2 = document.getElementById('grid-24')
+poisonButton2.addEventListener('click', () => {
+    foundPoison()
+})
+
+const scareButton1 = document.getElementById('grid-40')
+scareButton1.addEventListener('click', () => {
+    foundScare()
+})
+
+const scareButton2 = document.getElementById('grid-14')
+scareButton2.addEventListener('click', () => {
+    foundScare()
+})
+
+const passwordButton = document.querySelector('form')
+passwordButton.addEventListener('submit', (e) => {
+    e.preventDefault()
+    youWin()
+})
+
+const playButton = document.getElementById('play')
+playButton.addEventListener('click', () => {
+    bgMusic.play()
+})
+
+const pauseButton = document.getElementById('pause')
+pauseButton.addEventListener('click', () => {
+    bgMusic.pause()
+})
+
+setTimeout(() => {
+    startGame()
+    bgMusic.play()
+}, 2000);

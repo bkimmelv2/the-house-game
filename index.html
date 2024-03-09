@@ -4,41 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" defer></script>
 </head>
 <body>
+    <h1 id="title">Welcome to The House</h1>
+
+    <!-- Our grid will be generated below -->
     <div id="grid">
 
 
         <form class="code">
-            <input type="text" placeholder="Password" class="textbox">
+            <input type="text" autocomplete="off" placeholder="Password" id="textbox">
             <br>
-            <input type="submit" class="submit-button">
+            <input type="submit" value="Enter" id="submit-button">
         </form>
     </div>
 
+    <!-- Background Audio -->
+    <audio id="bg-music" src="audio/let-the-mystery-unfold-122118.mp3" preload="auto"></audio>
+    <button id="play">Play Music</button>
+    <button id="pause">Pause Music</button>
+
+    <!-- Scare Audio -->
+    <audio id="jumpscare" src="audio/jump-scare-sound-2-82831.mp3" preload="auto"></audio>
+
+    <!-- Modals -->
+    <dialog id="instructions">
+        <h1 class="d-title">How to Play</h1>
+        <div class="d-content">
+            <p>We cordially welcome you to... The House. <br><br>The goal is to figure out what the one-word password is and escape The House! <br><br>Click around the room to search for clues or other interesting items. <br><br>Good Luck! <br><br>P.S. my cat prefers to be left alone.</p>
+            <button id="ok-button">OK</button>
+        </div>
+    </dialog>
+
     <dialog id="clue1">
-        <h1>You found a clue!</h1>
-        <div class="dialog-content">
+        <h1 class="d-title">You found a clue!</h1>
+        <div class="d-content">
             <p>I speak without a mouth, heard but never seen. Outside I am hard to find, yet in a room I am serene.</p>
             <button id="ok-button1">OK</button>
         </div>
     </dialog>
 
     <dialog id="clue2">
-        <h1>You found a clue!</h1>
-        <div class="dialog-content">
+        <h1 class="d-title">You found a clue!</h1>
+        <div class="d-content">
             <p>In solitude, I am loud, yet in crowds, I am drowned. In your deepest thoughts, I am often found.</p>
             <button id="ok-button2">OK</button>
         </div>
     </dialog>
 
     <dialog id="false-clue1">
-        <h1>You found a book!</h1>
-        <div class="dialog-content">
-            <p>You dust it off and open it, only to realize it's just a dictionary. Strange... you notice the page is saved at the beginning of the S section.</p>
+        <h1 class="d-title">You found an old book!</h1>
+        <div class="d-content">
+            <p>You dust it off and open it, only to realize it's just a dictionary. <br><br>Strange... you notice the page is saved at the beginning of the S section.</p>
             <button id="ok-button3">OK</button>
+        </div>
+    </dialog>
+
+    <dialog id="false-clue2">
+        <h1 class="d-title">You found a creepy music box...</h1>
+        <div class="d-content">
+            <p>You take a look at it briefly, before deciding to open it. <br><br>Interesting... you can't hear anything at all.</p>
+            <button id="ok-button4">OK</button>
+        </div>
+    </dialog>
+
+    <dialog id="poison">
+        <h1 class="d-title">You found... something...</h1>
+        <div class="d-content">
+            <p>Oh no. You start to feel dizzy as you realize you've just touched poison! <br><br>Ouch, poor thing. Try again next time...</p>
+            <button id="ok-button5">OK</button>
+        </div>
+    </dialog>
+
+    <dialog id="scare">
+        <h1 class="d-title">AHHHH!</h1>
+        <div class="d-content">
+            <img id="scary-image" src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=1437&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="scary image">
+        </div>
+    </dialog>
+
+    <dialog id="funny1">
+        <h1 class="d-title">You found a small piece of parchment...</h1>
+        <div class="d-content">
+            <p>You open it up and read... <br><br>"Grocery list: milk, eggs, bread..." <br><br>Oh sorry, I must've forgotten to grab that.</p>
+            <button id="ok-button6">OK</button>
+        </div>
+    </dialog>
+
+    <dialog id="funny2">
+        <h1 class="d-title">You found a popscicle stick...</h1>
+        <div class="d-content">
+            <p>"Why can't you hear a pterodactyl going to the bathroom?" <br>...you turn the stick over... <br>"because the pee is silent" <br><br>Now you're hands are gross and you still haven't won</p>
+            <button id="ok-button7">OK</button>
+        </div>
+    </dialog>
+
+    <dialog id="try-again">
+        <h1 class="d-title">INCORRECT ANSWER</h1>
+        <div class="d-content">
+            <p>Press OK to continue</p>
+            <button id="ok-button8">OK</button>
+        </div>
+    </dialog>
+
+    <dialog id="you-win">
+        <h1 class="d-title">YOU HAVE ESCAPED SUCCESSFULLY! YOU WIN!</h1>
+        <div class="d-content">
+            <p>Press RESTART to start again</p>
+            <button id="ok-button9">RESTART</button>
         </div>
     </dialog>
 </body>

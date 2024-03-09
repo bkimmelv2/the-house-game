@@ -24,13 +24,14 @@ body {
     color: #6F0B01;
     border-radius: 30px;
     padding: 15px;
+    margin-top: 5px;
 }
 
 #grid {
     display: grid;
     /* This is how we take the 64 created divs and make them an 8x8 grid */
     grid-template-columns: repeat(8, 1fr);
-    margin: 15px auto;
+    margin: 0 auto;
     border: 1px solid black;
     padding: 20px;
     width: 75%;
@@ -111,4 +112,5 @@ button {
 
 #play, #pause {
     background-color: darkgray;
+    margin-top: 5px;
 }

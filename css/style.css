@@ -106,6 +106,9 @@ dialog::backdrop {
 
 button {
     border-radius: 15px;
-    background-color: darkgray;
     cursor: pointer;
+}
+
+#play, #pause {
+    background-color: darkgray;
 }

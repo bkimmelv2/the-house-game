@@ -21,12 +21,20 @@ for (let i = 1; i <= 63; i++) {
 
 // MUSIC SETTINGS //
 const bgMusic = document.getElementById('bg-music')
-bgMusic.volume = 0.15
+bgMusic.volume = 0.07
 bgMusic.loop = true
 
 const jumpScare = document.getElementById('jumpscare')
 jumpScare.volume = 0.25
 jumpScare.loop = false
+
+const poisonAudio = document.getElementById('you-lose')
+poisonAudio.volume = 0.2
+poisonAudio.loop = false
+
+const victory = document.getElementById('victory')
+victory.volume = 0.2
+victory.loop = false
 
 // Random number generator if I need it later:
 // const randomNumber = Math.floor(Math.random() * 63) + 1
@@ -112,6 +120,8 @@ const foundFunny2 = () => {
 const foundPoison = () => {
     // alert('You start to feel dizzy as you realize you\'ve just touched poison! Ouch, poor thing. Try again next time!')
     document.getElementById("poison").showModal()
+    bgMusic.pause()
+    poisonAudio.play()
     // OK BUTTON //
     const okButton = document.getElementById('ok-button5')
     okButton.addEventListener('click', () => {
@@ -134,6 +144,8 @@ const youWin = () => {
     if (userInput.toLowerCase() === 'silence') {
         // console.log('you win')
         document.getElementById("you-win").showModal()
+        bgMusic.pause()
+        victory.play()
         // OK BUTTON //
         const okButton = document.getElementById('ok-button9')
         okButton.addEventListener('click', () => {
@@ -227,6 +239,7 @@ pauseButton.addEventListener('click', () => {
     bgMusic.pause()
 })
 
+// showing instructions after a brief delay
 setTimeout(() => {
     startGame()
     bgMusic.play()

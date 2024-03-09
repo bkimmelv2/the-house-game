@@ -49,6 +49,32 @@ body {
     cursor: pointer;
 }
 
+dialog {
+    background-color: lightgray;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 0 15px black;
+}
+
+.d-title {
+    background-color: #6F0B01;
+    color: white;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.d-content {
+    margin: 5px;
+    font-size: 13pt;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .code {
     grid-row: 5;
     grid-column: 6;
@@ -59,10 +85,15 @@ body {
     width: 70px;
     padding: 2px;
     text-align: center;
+    border-radius: 15px;
+    background-color: darkgrey;
 }
 
 #submit-button {
     margin: 3px 0 0 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: green;
 }
 
 ::placeholder {
@@ -71,4 +102,10 @@ body {
 
 #scary-image {
     width: 75%;
+}
+
+button {
+    border-radius: 15px;
+    background-color: darkgray;
+    cursor: pointer;
 }

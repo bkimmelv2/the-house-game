@@ -18,9 +18,9 @@
 
 
         <form class="code">
-            <input type="text" autocomplete="off" placeholder="Password" id="textbox">
+            <input id="textbox" type="text" autocomplete="off" placeholder="Password">
             <br>
-            <input type="submit" value="Enter" id="submit-button">
+            <input id="submit-button" type="submit" value="Enter">
         </form>
     </div>
 
@@ -32,11 +32,17 @@
     <!-- Scare Audio -->
     <audio id="jumpscare" src="audio/jump-scare-sound-2-82831.mp3" preload="auto"></audio>
 
+    <!-- Poison Audio -->
+    <audio id="you-lose" src="audio/violin-lose-1-175615.mp3" preload="auto"></audio>
+
+    <!-- Victory Audio -->
+    <audio id="victory" src="audio/level-win-6416.mp3" preload="auto"></audio>
+
     <!-- Modals -->
     <dialog id="instructions">
         <h1 class="d-title">How to Play</h1>
         <div class="d-content">
-            <p>We cordially welcome you to... The House. <br><br>The goal is to figure out what the one-word password is and escape The House! <br><br>Click around the room to search for clues or other interesting items. <br><br>Good Luck! <br><br>P.S. my cat prefers to be left alone.</p>
+            <p>We cordially welcome you to... The House. <br><br>The goal is to figure out what the one-word password is and escape The House! <br><br>Click around the room to search for clues and other interesting items. <br><br>Good Luck! <br><br>P.S. my cat prefers to be left alone.</p>
             <button id="ok-button">OK</button>
         </div>
     </dialog>
@@ -97,7 +103,7 @@
     </dialog>
 
     <dialog id="funny2">
-        <h1 class="d-title">You found a popscicle stick...</h1>
+        <h1 class="d-title">You found a popsicle stick...</h1>
         <div class="d-content">
             <p>"Why can't you hear a pterodactyl going to the bathroom?" <br>...you turn the stick over... <br>"because the pee is silent" <br><br>Now you're hands are gross and you still haven't won</p>
             <button id="ok-button7">OK</button>

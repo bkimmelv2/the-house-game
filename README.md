@@ -21,7 +21,7 @@ The goal of the game is to figure out what the one-word password is in order to 
 * Note: Modern browsers block audio autoplay. Please use the buttons at the bottom of the webpage to play/pause music to your liking.
 
 ## Wireframes
-![wireframe](https://imgur.com/a/zopRdst)
+(![wireframe](<Screenshot 2024-02-28 at 9.45.17 PM.png>))
 
 ## User Stories
 * The user is greeted with instructions and clicks OK to play.
